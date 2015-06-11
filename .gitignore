@@ -8,6 +8,8 @@ node_modules
 # Ignore automatically generated cruft
 *.log
 
+tmp
+
 .sass-cache
 vendor
 public/css

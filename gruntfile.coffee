@@ -66,7 +66,7 @@ module.exports= (grunt)->
       
 
     concat:
-      options:
+      dist:
         src: ["tmp/js/app.js", "tmp/jst/js/**/*.js", "tmp/js/**/*.js"]
         dest: "public/js/site-dev.js"
 
@@ -127,7 +127,7 @@ module.exports= (grunt)->
     "jade"
     "jst"
     "compass"
-    "concat"
+    "newer:concat"
   ]
   grunt.registerTask "server", [
     'php:server'
