@@ -1,0 +1,20 @@
+!!! 5
+%html(lang="ja")
+  %head
+    %meta(charset="utf-8")
+    %meta(http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1")
+    %meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    %meta(name="description" content="サイトの概要")
+    %meta(name="keywords" content="サイトのキーワード")
+    %meta(name="robots" content="index, follow")
+    %meta(name="csrf-token" content="#{wp_create_nonce('wp_json')}")
+    /[if lt IE 9]
+      =javascript_include_tag("http://html5shiv.googlecode.com/svn/trunk/html5.js")
+    %link(rel="stylesheet" type="text/css" href="/css/site.css")
+    %script(type="text/javascript" src="/js/vendor.js")
+    %script(type="text/javascript" src="/js/site.js")
+    - wp_head()
+
+  %body(class="#{join(' ', get_body_class())}")
+    .container
+  - wp_footer()
