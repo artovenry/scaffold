@@ -3,12 +3,12 @@ require 'bootstrap-sass'
 require 'font-awesome-sass'
 
 sourcemap= true
-sass_dir= "../src/scss"
-css_dir= "../public/css"
+sass_dir= "src/scss"
+css_dir= "public/css"
 
-images_dir= "../src/img"
+images_dir= "src/img"
 http_images_dir= "img"
-fonts_dir= "../public/vendor/fonts"
+fonts_dir= "public/vendor/fonts"
 http_fonts_dir= "vendor/fonts"
 
 # You can select your preferred output style here (can be overridden via the command line):

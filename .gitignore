@@ -8,8 +8,12 @@ node_modules
 # Ignore automatically generated cruft
 *.log
 
-compass/.sass-cache
-compass/vendor
+.sass-cache
+vendor
+public/css
+public/vendor
+public/img
+public/js
 
 # Ignore config
 public/wp/local-config.php
