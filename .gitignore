@@ -32,7 +32,7 @@ Thumbs.db
 .vagrant
 
 #theme
-public/content/themes/theme/tmp/*
+public/content/themes/theme/tmp/
 
 
 # WordPress + popular plugin generated — adapted from:
