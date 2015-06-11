@@ -3,15 +3,15 @@ module.exports= (grunt)->
     pkg: grunt.file.readJSON('package.json')
 
     bower:
-      options:
-        layout: "byType"
-        cleanTargetDir: on
-        cleanBowerDir: off
+      install:
         options:
+          layout: "byType"
+          cleanTargetDir: on
+          cleanBowerDir: off
           targetDir: "public/vendor"
       
     bower_concat:
-      options:
+      all:
         dependencies:
           "backbone": "jquery"
           "bootstrap": "jquery"
@@ -95,21 +95,22 @@ module.exports= (grunt)->
           ["jst"]
 
     php:
-      options:
-        port: 3000
-        host: "localhost"
-        base: "public"
+      server:
+        options:
+          port: 3000
+          host: "localhost"
+          base: "public"
 
     connect:
       front:
-          options:
-            port:30000
-            host: "localhost"
-            livereload: on
-            open: off
-            middleware: (connect)-> [
-              require('grunt-connect-proxy/lib/utils').proxyRequest
-            ]
+        options:
+          port:30000
+          host: "localhost"
+          livereload: on
+          open: off
+          middleware: (connect)-> [
+            require('grunt-connect-proxy/lib/utils').proxyRequest
+          ]
       proxies: [
         context: "/"
         host: "localhost"
