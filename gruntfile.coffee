@@ -130,7 +130,7 @@ module.exports= (grunt)->
     "concat"
   ]
   grunt.registerTask "server", [
-    'php'
+    'php:server'
     'configureProxies'
     'connect:front'
     'esteWatch'

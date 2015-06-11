@@ -31,6 +31,10 @@ Thumbs.db
 # Vagrant
 .vagrant
 
+#theme
+public/content/themes/theme/tmp/*
+
+
 # WordPress + popular plugin generated — adapted from:
 # https://github.com/github/gitignore/blob/master/WordPress.gitignore
 public/wp/sitemap.xml
@@ -44,6 +48,7 @@ public/content/uploads/
 public/content/upgrade/
 public/content/plugins/
 public/content/languages/
+
 
 content/wp-cache-config.php
 # WordPress Core
