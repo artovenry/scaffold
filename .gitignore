@@ -7,7 +7,9 @@ node_modules
 
 # Ignore automatically generated cruft
 *.log
-.sass-cache
+
+compass/.sass-cache
+compass/vendor
 
 # Ignore config
 public/wp/local-config.php
@@ -27,17 +29,17 @@ Thumbs.db
 
 # WordPress + popular plugin generated — adapted from:
 # https://github.com/github/gitignore/blob/master/WordPress.gitignore
-sitemap.xml
-sitemap.xml.gz
-content/advanced-cache.php
-content/backup-db/
-content/backups/
-content/blogs.dir/
-content/cache/
-content/uploads/
-content/upgrade/
-content/plugins/
-content/languages/
+public/wp/sitemap.xml
+public/wp/sitemap.xml.gz
+public/content/advanced-cache.php
+public/content/backup-db/
+public/content/backups/
+public/content/blogs.dir/
+public/content/cache/
+public/content/uploads/
+public/content/upgrade/
+public/content/plugins/
+public/content/languages/
 
 content/wp-cache-config.php
 # WordPress Core
