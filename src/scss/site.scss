@@ -9,4 +9,6 @@
 
 // Import Fontawesome integration
 @import "font-awesome-compass";
+// We use Bower's fontawesome component.
+$fa-font-path: "fontawesome/";
 @import "font-awesome";
