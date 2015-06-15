@@ -22,10 +22,11 @@ module.exports= (grunt)->
         dest: "public/js/vendor.js"
 
     compass:
-      options: 
-        bundleExec: on
+      compile:
         src: "src/**/*.scss"
-        config: "compass.rb"
+        options: 
+          bundleExec: on
+          config: "compass.rb"
 
     coffee:
       compile: 
