@@ -40,7 +40,7 @@ module.exports= (grunt)->
         ]
 
     jade: 
-      compile:
+      compile_jst:
         options: {pretty: true}
         files: [
           expand: true
@@ -82,18 +82,18 @@ module.exports= (grunt)->
         livereload:
           enabled: on
           extensions: ['php', 'js', 'css', 'png', 'gif', 'jpg', 'jpeg', 'html']
-        "coffee": (path)->
-          ["newer:coffee", "concat"]
-        "jade": (path)->
-          ["jade"]
-        "scss": (path)->
-          ["compass"]
-        "png": (path)->
-          ["compass"]
-        "js": (path)->
-          ["newer:concat"]
-        "html": (path)->
-          ["jst"]
+      "coffee": (path)->
+        ["newer:coffee", "concat"]
+      "jade": (path)->
+        ["jade"]
+      "scss": (path)->
+        ["compass"]
+      "png": (path)->
+        ["compass"]
+      "js": (path)->
+        ["newer:concat"]
+      "html": (path)->
+        ["jst"]
 
     php:
       server:
