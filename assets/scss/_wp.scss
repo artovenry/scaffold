@@ -1,0 +1,30 @@
+@charset "utf-8";
+
+$wp-paragraph-margin: 1em !default;
+$wp-image-padding: 2em !default;
+$wp-image-max-width-xs: 44% !default;
+
+.post-content p{
+	margin-bottom: $wp-paragraph-margin;
+}
+
+img[class *='wp-image']{
+	@extend .clearfix;
+	@extend .img-responsive;
+	padding-top: $wp-image-padding;
+	padding-bottom: $wp-image-padding;
+	@include screen-only-xs{
+		max-width: $wp-image-max-width-xs;
+	}
+	&.alignleft{
+		@extend .pull-left;
+		padding-right: $wp-image-padding;
+	}
+	&.alignright{
+		@extend .pull-right;
+		padding-left: $wp-image-padding;
+	}
+	&.aligncenter{
+		@extend .center-block;
+	}
+}

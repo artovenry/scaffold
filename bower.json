@@ -1,8 +1,8 @@
 {
-  "name": "sandbox",
+  "name": "site",
   "version": "0.0.0",
   "authors": [
-    "showtarow <artovenry@gmail.com>"
+    "artovenry <artovenry@gmail.com>"
   ],
   "license": "MIT",
   "ignore": [
@@ -21,9 +21,9 @@
     "fontawesome": "~4.3.0"
   },
   "exportsOverride": {
-    "*": {
-      "fonts": "fonts/*"
+    "bootstrap": {
+      "js": "dist/js/bootstrap.js",
+      "fonts": "dist/fonts/*"
     }
   }
-
 }

@@ -1,27 +1,3 @@
-# ignore YeoPress configuration file since it contains password information
-.yeopress
-
-# As Yeoman assumes the usage of Bower and Grunt, ignore the below:
-bower_components
-node_modules
-
-# Ignore automatically generated cruft
-*.log
-
-tmp
-
-.sass-cache
-vendor
-public/css
-public/vendor
-public/img
-public/js
-
-# Ignore config
-public/wp/local-config.php
-public/wp/wp-config.php
-
-
 # Operating system files
 .Spotlight-V100
 .Trashes
@@ -30,57 +6,30 @@ public/wp/wp-config.php
 ehthumbs.db
 Thumbs.db
 
-# Vagrant
-.vagrant
+#misc
+WORK/*
 
-#theme
-public/content/themes/theme/tmp/
+wp-cli.yml
 
+#frontend files
+vendor/*
+tmp/*
+bower_components/*
+node_modules/*
+.bundle/*
+.sass-cache/*
+!.keep
 
-# WordPress + popular plugin generated — adapted from:
-# https://github.com/github/gitignore/blob/master/WordPress.gitignore
-public/wp/sitemap.xml
-public/wp/sitemap.xml.gz
-public/content/advanced-cache.php
-public/content/backup-db/
-public/content/backups/
-public/content/blogs.dir/
-public/content/cache/
-public/content/uploads/
-public/content/upgrade/
-public/content/plugins/
-public/content/languages/
+#--theme files----------------
+theme/style.css
+theme/vendor
 
+#art_server.php
+#public/js
+#public/css
+#public/vendor
+#public/tmp/*
+#!.keep
+#public/wp-content
 
-content/wp-cache-config.php
-# WordPress Core
-public/wp/db-config.php
-public/wp/index.php
-public/wp/license.txt
-public/wp/readme.html
-public/wp/wp-activate.php
-public/wp/wp-app.php
-public/wp/wp-atom.php
-public/wp/wp-blog-header.php
-public/wp/wp-comments-post.php
-public/wp/wp-commentsrss2.php
-public/wp/wp-config-sample.php
-public/wp/wp-cron.php
-public/wp/wp-feed.php
-public/wp/wp-links-opml.php
-public/wp/wp-load.php
-public/wp/wp-login.php
-public/wp/wp-mail.php
-public/wp/wp-rdf.php
-public/wp/wp-rss.php
-public/wp/wp-rss2.php
-public/wp/wp-pass.php
-public/wp/wp-register.php
-public/wp/wp-settings.php
-public/wp/wp-signup.php
-public/wp/wp-trackback.php
-public/wp/xmlrpc.php
-public/wp/wp-admin
-public/wp/wp-includes
-public/wp/wp-content
-
+wp

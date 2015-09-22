@@ -1,0 +1,25 @@
+@charset "utf-8";
+
+@mixin screen-only-xs{
+	@media(max-width: $screen-xs-max){@content;}
+}
+
+@mixin screen-sm{
+	@media(min-width: $screen-sm-min){@content;}
+}
+
+@mixin screen-only-sm{
+	@media(min-width: $screen-sm-min) and (max-width: $screen-sm-max){@content;}
+}
+
+@mixin screen-md{
+	@media(min-width: $screen-md-min){@content;}
+}
+
+@mixin screen-only-md{
+	@media(min-width: $screen-md-min) and (max-width: $screen-md-max){@content;}
+}
+
+@mixin screen-lg{
+	@media(min-width: $screen-lg-min){@content;}
+}

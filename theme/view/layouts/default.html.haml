@@ -12,10 +12,10 @@
       =javascript_include_tag("http://html5shiv.googlecode.com/svn/trunk/html5.js")
     %link(rel="stylesheet" type="text/css" href="/css/site.css")
     %script(type="text/javascript" src="/js/vendor.js")
-    %script(type="text/javascript" src="/js/site.js")
+    %script(type="text/javascript" src="/js/site-dev.js")
     - wp_head()
 
   %body(class="#{join(' ', get_body_class())}")
     .container
       - wl_yield()
-    - wp_footer()
+  - wp_footer()

@@ -1,2 +1,0 @@
-<?
-render_view("index");

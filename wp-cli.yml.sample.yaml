@@ -1,0 +1,26 @@
+path: wp
+url: 'http://localhost:3000'
+user: system
+color: true
+
+core download:
+  path: wp
+  locale: ja
+  force: true
+
+core config:
+  dbname: dbname
+  dbuser: root
+  dbpass: 
+  dbhost: localhost
+  dbcharset: utf8
+  dbcollate:
+  dbprefix: wp_
+  locale: ja
+
+core install:
+  url: 'http://localhost:3000'
+  title: site title
+  admin_user: system
+  admin_password: password
+  admin_email: mail@example.local

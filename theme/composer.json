@@ -1,0 +1,11 @@
+{
+    "name": "artovenry/theme",
+    "description": "Composer package for current theme.",
+    "authors": [
+        {
+            "name": "Artovenry",
+            "email": "mail@example.local"
+        }
+    ],
+    "require": {}
+}
