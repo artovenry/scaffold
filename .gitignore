@@ -19,17 +19,9 @@ node_modules/*
 .bundle/*
 .sass-cache/*
 !.keep
+vendor
 
 #--theme files----------------
-theme/style.css
-theme/vendor
-
-#art_server.php
-#public/js
-#public/css
-#public/vendor
-#public/tmp/*
-#!.keep
-#public/wp-content
-
 wp
+theme/style.css
+

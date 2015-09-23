@@ -5,11 +5,11 @@ module.exports= (grunt)->
     bower:
       install:
         options:
-          layout: "byComponent", targetDir: "public/vendor"
+          layout: "byComponent", targetDir: "theme/vendor"
           cleanTargetDir: on, cleanBowerDir: off
     bower_concat:
       all:
-        dest: 'public/js/vendor.js'
+        dest: 'theme/js/vendor.js'
         bowerOptions: {relative: false}
         dependencies:
           "backbone": "jquery"
@@ -24,11 +24,11 @@ module.exports= (grunt)->
     coffee:
       compile:
         options: bare: true
-        files: [{expand: true, cwd: 'src/coffee', src: ['**/*.coffee'], dest: 'tmp/js', ext: '.js'}]
+        files: [{expand: true, cwd: 'theme/coffee', src: ['**/*.coffee'], dest: 'tmp/js', ext: '.js'}]
     jade: 
       compile_jst:
         options: pretty: true
-        files: [{expand: true, cwd: 'src/jst', src: ['**/*.jade'], dest: 'tmp/jst/html', ext: '.html'}]
+        files: [{expand: true, cwd: 'theme/jst', src: ['**/*.jade'], dest: 'tmp/jst/html', ext: '.html'}]
     jst:
       compile:
         options:
@@ -39,13 +39,21 @@ module.exports= (grunt)->
       dist:
         files:[
           {src:["tmp/jst/js/**/*.js"], dest:"tmp/jst/jst.js"}
-          {src:["tmp/jst/jst.js","tmp/js/**/*.js"], dest:"public/js/site-dev.js"}
+          {src:["tmp/jst/jst.js","tmp/js/**/*.js"], dest:"theme/js/site-dev.js"}
         ]
 
     compass:
+      options: bundleExec: on, config: "compass.rb"
       development:
-        src: "src/scss/**/*.scss"
-        options: bundleExec: on, config: "compass_development.rb"
+        #src: "theme/scss/**/*.scss"
+        options: environment: "development"
+      staging:
+        #src: "theme/scss/**/*.scss"
+        options: environment: "staging"
+      production:
+        #src: "theme/scss/**/*.scss"
+        options: environment: "production"
+
     php:
       hostName: 'localhost'
       server: options: port: 3000, hostname: '<%= php.hostName %>', base: "wp"
@@ -54,10 +62,9 @@ module.exports= (grunt)->
         options: port:30000, hostname: '<%= php.hostName %>', livereload: on, open: off, middleware: ->
             [require('grunt-connect-proxy/lib/utils').proxyRequest]
       proxies: [context: "/",host: '<%= php.hostName %>', port: 3000, changeOrigin: on]
-
     esteWatch:
       options:
-        dirs: ["src/**", "public/**/"]
+        dirs: ["theme/**/"]
         livereload: enabled: on, extensions: ['haml','php','png', 'gif', 'jpg','js', 'html', 'css']
       "coffee": ->["newer:coffee", "concat"]
       "jade": ->["newer:jade", "newer:jst", "concat"]
@@ -68,7 +75,7 @@ module.exports= (grunt)->
   grunt.registerTask "make", [
     "bower"
     "bower_concat"
-    "compass:development"
+    "compass"
     "coffee"
     "jade"
     "jst"
