@@ -1,11 +1,16 @@
 {
     "name": "artovenry/theme",
     "description": "Composer package for current theme.",
+    "repositories":[
+      {"type": "vcs", "url": "https://github.com/artovenry/haml"}
+    ],
     "authors": [
         {
             "name": "Artovenry",
             "email": "mail@example.local"
         }
     ],
-    "require": {}
+    "require": {
+      "artovenry/haml": "dev-master"
+    }
 }
