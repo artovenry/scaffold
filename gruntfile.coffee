@@ -43,16 +43,15 @@ module.exports= (grunt)->
         ]
 
     compass:
-      options: bundleExec: on, config: "compass.rb"
       development:
         #src: "theme/scss/**/*.scss"
-        options: environment: "development"
+        options: bundleExec: on, config: "compass.rb", environment: "development"
       staging:
         #src: "theme/scss/**/*.scss"
-        options: environment: "staging"
+        options: bundleExec: on, config: "compass.rb", environment: "production"
       production:
         #src: "theme/scss/**/*.scss"
-        options: environment: "production"
+        options: bundleExec: on, config: "compass.rb", environment: "production"
 
     php:
       hostName: 'localhost'

@@ -4,15 +4,12 @@
     %meta(charset="utf-8")
     %meta(http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1")
     %meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    %meta(name="description" content="サイトの概要")
-    %meta(name="keywords" content="サイトのキーワード")
-    %meta(name="robots" content="index, follow")
-    %meta(name="csrf-token" content="#{wp_create_nonce('wp_json')}")
     /[if lt IE 9]
-      =javascript_include_tag("http://html5shiv.googlecode.com/svn/trunk/html5.js")
-    %link(rel="stylesheet" type="text/css" href="/css/site.css")
-    %script(type="text/javascript" src="/js/vendor.js")
-    %script(type="text/javascript" src="/js/site-dev.js")
+      %script(type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js")
+    - $dev= (ART_ENV == "development")? "-dev" : "";
+    %link(rel="stylesheet" type="text/css" href="#{get_stylesheet_directory_uri()}/css/site#{$dev}.css")
+    %script(type="text/javascript" src="#{get_stylesheet_directory_uri()}/js/vendor.js")
+    %script(type="text/javascript" src="#{get_stylesheet_directory_uri()}/js/site#{$dev}.js")
     - wp_head()
 
   %body(class="#{join(' ', get_body_class())}")
