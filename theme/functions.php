@@ -5,9 +5,12 @@ define("ART_ENV", "development");
 define("ART_VIEW", __DIR__ . "/view");
 
 
-// FOR livereload
-if(ART_ENV === "development" )
-  add_filter("redirect_canonical", function(){return false;});
+add_action("init",function(){
+  if(ART_ENV === "development" ){
+    // FOR livereload
+    add_filter("redirect_canonical", function(){return false;});
+  }
+});
 remove_action('wp_head', 'wp_generator');
 remove_action('wp_head', 'wlwmanifest_link');
 remove_action('wp_head', 'rsd_link');

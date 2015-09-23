@@ -74,7 +74,7 @@ module.exports= (grunt)->
   grunt.registerTask "make", [
     "bower"
     "bower_concat"
-    "compass"
+    "compass:development"
     "coffee"
     "jade"
     "jst"
