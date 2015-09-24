@@ -16,3 +16,7 @@ http_fonts_dir= "wp-content/themes/theme/theme/vendor"
 
 output_style = :nested
 line_comments =  true
+
+on_stylesheet_saved do |filename|
+    File.rename(filename, "#{File.dirname(filename)}/#{File.basename(filename, ".*")}-dev.css")
+end
