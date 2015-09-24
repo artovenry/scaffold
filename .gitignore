@@ -6,27 +6,20 @@
 ehthumbs.db
 Thumbs.db
 
-#misc
 WORK
-
 wp-cli.yml
-
-#frontend files
-vendor/*
 tmp/*
-bower_components/*
-node_modules/*
-.bundle/*
-.sass-cache/*
-!.keep
+bower_components
+node_modules
+.bundle
+.sass-cache
 vendor
 
-#--theme files----------------
 wp
-theme/style.css
-theme/css
-theme/js
-theme/img
-theme/vendor/*
+style.css
 theme/static/*
 !.keep
+theme/assets/*
+!.keep
+
+deploy

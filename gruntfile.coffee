@@ -5,11 +5,11 @@ module.exports= (grunt)->
     bower:
       install:
         options:
-          layout: "byComponent", targetDir: "theme/vendor"
+          layout: "byComponent", targetDir: "theme/assets/vendor"
           cleanTargetDir: on, cleanBowerDir: off
     bower_concat:
       all:
-        dest: 'theme/js/vendor.js'
+        dest: 'theme/assets/js/vendor.js'
         bowerOptions: {relative: false}
         dependencies:
           "backbone": "jquery"
@@ -39,16 +39,10 @@ module.exports= (grunt)->
       dist:
         files:[
           {src:["tmp/jst/js/**/*.js"], dest:"tmp/jst/jst.js"}
-          {src:["tmp/jst/jst.js","tmp/js/**/*.js"], dest:"theme/js/site-dev.js"}
+          {src:["tmp/jst/jst.js","tmp/js/**/*.js"], dest:"theme/assets/js/site-dev.js"}
         ]
 
-    compass:
-      development:
-        options: bundleExec: on, config: "compass.rb", environment: "development"
-      staging:
-        options: bundleExec: on, config: "compass.rb", environment: "production"
-      production:
-        options: bundleExec: on, config: "compass.rb", environment: "production"
+    compass: compile: options: bundleExec: on, config: "compass.rb"
 
     php:
       hostName: 'localhost'
@@ -64,7 +58,7 @@ module.exports= (grunt)->
         livereload: enabled: on, extensions: ['haml','php','png', 'gif', 'jpg','js', 'html', 'css']
       "coffee": ->["newer:coffee", "concat"]
       "jade": ->["newer:jade", "newer:jst", "concat"]
-      "scss": ->["compass:development"]
+      "scss": ->["compass"]
 
 
   require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks)
@@ -72,7 +66,7 @@ module.exports= (grunt)->
   grunt.registerTask "make", [
     "bower"
     "bower_concat"
-    "compass:development"
+    "compass"
     "coffee"
     "jade"
     "jst"
