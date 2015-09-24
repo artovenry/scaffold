@@ -24,11 +24,9 @@ vendor
 #--theme files----------------
 wp
 theme/style.css
-theme/css/*
-!.keep
-theme/js/*
-!.keep
-theme/img/*
-!.keep
+theme/css
+theme/js
+theme/img
 theme/vendor/*
+theme/static/*
 !.keep

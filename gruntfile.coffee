@@ -24,11 +24,11 @@ module.exports= (grunt)->
     coffee:
       compile:
         options: bare: true
-        files: [{expand: true, cwd: 'theme/coffee', src: ['**/*.coffee'], dest: 'tmp/js', ext: '.js'}]
+        files: [{expand: true, cwd: 'src/coffee', src: ['**/*.coffee'], dest: 'tmp/js', ext: '.js'}]
     jade: 
       compile_jst:
         options: pretty: true
-        files: [{expand: true, cwd: 'theme/jst', src: ['**/*.jade'], dest: 'tmp/jst/html', ext: '.html'}]
+        files: [{expand: true, cwd: 'src/jst', src: ['**/*.jade'], dest: 'tmp/jst/html', ext: '.html'}]
     jst:
       compile:
         options:
@@ -44,13 +44,10 @@ module.exports= (grunt)->
 
     compass:
       development:
-        #src: "theme/scss/**/*.scss"
         options: bundleExec: on, config: "compass.rb", environment: "development"
       staging:
-        #src: "theme/scss/**/*.scss"
         options: bundleExec: on, config: "compass.rb", environment: "production"
       production:
-        #src: "theme/scss/**/*.scss"
         options: bundleExec: on, config: "compass.rb", environment: "production"
 
     php:
@@ -68,6 +65,7 @@ module.exports= (grunt)->
       "coffee": ->["newer:coffee", "concat"]
       "jade": ->["newer:jade", "newer:jst", "concat"]
       "scss": ->["compass:development"]
+
 
   require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks)
   grunt.task.run('notify_hooks')
