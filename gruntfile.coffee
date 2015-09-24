@@ -54,7 +54,7 @@ module.exports= (grunt)->
       proxies: [context: "/",host: '<%= connect.hostName %>', port: 3000, changeOrigin: on]
     esteWatch:
       options:
-        dirs: ["theme/**/"]
+        dirs: ["src/**/", "theme/**/"]
         livereload: enabled: on, extensions: ['haml','php','png', 'gif', 'jpg','js', 'html', 'css']
       "coffee": ->["newer:coffee", "concat"]
       "jade": ->["newer:jade", "newer:jst", "concat"]
