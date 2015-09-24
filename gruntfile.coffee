@@ -45,13 +45,13 @@ module.exports= (grunt)->
     compass: compile: options: bundleExec: on, config: "compass.rb"
 
     php:
-      hostName: 'localhost'
-      server: options: port: 3000, hostname: '<%= php.hostName %>', base: "wp"
+      server: options: port: 3000, hostname: '0.0.0.0', base: "wp"
     connect:
+      hostname: 'localhost'
       front:
-        options: port:30000, hostname: '<%= php.hostName %>', livereload: on, open: off, middleware: ->
+        options: port:30000, hostname: '<%= connect.hostName %>', livereload: on, open: off, middleware: ->
             [require('grunt-connect-proxy/lib/utils').proxyRequest]
-      proxies: [context: "/",host: '<%= php.hostName %>', port: 3000, changeOrigin: on]
+      proxies: [context: "/",host: '<%= connect.hostName %>', port: 3000, changeOrigin: on]
     esteWatch:
       options:
         dirs: ["theme/**/"]
