@@ -1,5 +1,3 @@
-# .gitignore file for starting website.
-
 # Operating system files
 .Spotlight-V100
 .Trashes
@@ -8,14 +6,20 @@
 ehthumbs.db
 Thumbs.db
 
-tmp
+WORK
+wp-cli.yml
+tmp/*
 bower_components
 node_modules
 .bundle
 .sass-cache
-
-wp-cli.yml
-wp-cli.yml.sample
 vendor
-!theme/assets/vendor
-theme/style.css
+
+wp
+style.css
+theme/static/*
+!.keep
+theme/assets/*
+!.keep
+
+deploy
