@@ -4,15 +4,14 @@
     %meta(charset="utf-8")
     %meta(http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1")
     %meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    / Le HTML5 shim, for IE6-8 support of HTML elements
     /[if lt IE 9]
-      %script(type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js")
-    - $dev= (ART_ENV == "development")? "-dev" : "";
-    %link(rel="stylesheet" type="text/css" href="#{get_stylesheet_directory_uri()}/assets/css/site#{$dev}.css")
-    %script(type="text/javascript" src="#{get_stylesheet_directory_uri()}/assets/js/vendor.js")
-    %script(type="text/javascript" src="#{get_stylesheet_directory_uri()}/assets/js/site#{$dev}.js")
+      %script(src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js")
+    %link(rel="stylesheet" href="#{get_template_directory_uri()}/assets/css/site.css")
+    %script(type="text/javascript" src="#{get_template_directory_uri()}/assets/js/vendor.js")
+    %script(type="text/javascript" src="#{get_template_directory_uri()}/assets/js/site.js")
     - wp_head()
-
-  %body(class="#{join(' ', get_body_class())}")
+  %body
     .container
       - render_yield()
-  - wp_footer()
+    - wp_footer()
