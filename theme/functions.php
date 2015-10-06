@@ -1,25 +1,24 @@
 <?
-require "vendor/autoload.php";
+define('ART_ENV', 'Development');
 
-define("ART_ENV", "development");
-define("ART_VIEW", __DIR__ . "/view");
+require TEMPLATEPATH . "/vendor/autoload.php";
 
+define('ART_VIEW', TEMPLATEPATH . '/view');
+define('ART_VERSION_YAML', TEMPLATEPATH . '/version.yml');
 
-add_action("init",function(){
-  if(ART_ENV === "development" ){
-    // FOR livereload
-    add_filter("redirect_canonical", function(){return false;});
-  }
-});
-remove_action('wp_head', 'wp_generator');
-remove_action('wp_head', 'wlwmanifest_link');
-remove_action('wp_head', 'rsd_link');
-remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
-remove_action( 'wp_print_styles', 'print_emoji_styles' );
-remove_action( 'admin_print_styles', 'print_emoji_styles' );    
-remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
-remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );    
-remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
-
+Artovenry\Wp\Version::run();
+Artovenry\Wp\Helpers::run();
 Artovenry\Haml::run();
+
+
+remove_buildin_scripts();
+
+add_theme_support( 'title-tag' );
+if(ART_ENV !== "production"){
+  add_action('init', function(){
+    add_filter("redirect_canonical", function(){return false;});
+  });
+}
+if(!is_page("contact")){
+  remove_action( 'wp_enqueue_scripts', 'wpcf7_do_enqueue_scripts' );
+}
