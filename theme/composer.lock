@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1b8d2ef78929d854cf8e0bc8f1743cb4",
+    "hash": "cc4803d2f2d8d513fd5581ea0ecbaa18",
     "packages": [
         {
             "name": "artovenry/haml",
@@ -44,6 +44,47 @@
                 "issues": "https://github.com/artovenry/haml/issues"
             },
             "time": "2015-09-23 08:46:28"
+        },
+        {
+            "name": "artovenry/wphelpers",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/artovenry/wphelpers.git",
+                "reference": "8eb1fef3ea259d790fe5dd68517e7e5fd9a6b7bd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/artovenry/wphelpers/zipball/8eb1fef3ea259d790fe5dd68517e7e5fd9a6b7bd",
+                "reference": "8eb1fef3ea259d790fe5dd68517e7e5fd9a6b7bd",
+                "shasum": ""
+            },
+            "require": {
+                "mthaml/mthaml": "^1.7",
+                "symfony/yaml": "^2.7.5"
+            },
+            "require-dev": {
+                "mthaml/mthaml": "^1.7",
+                "symfony/yaml": "^2.7.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "": "lib/"
+                }
+            },
+            "authors": [
+                {
+                    "name": "artovenry",
+                    "email": "artovenry@gmail.com"
+                }
+            ],
+            "description": "Helper classes for Artovenry's wordpress site.",
+            "support": {
+                "source": "https://github.com/artovenry/wphelpers/tree/master",
+                "issues": "https://github.com/artovenry/wphelpers/issues"
+            },
+            "time": "2015-10-05 10:26:51"
         },
         {
             "name": "mthaml/mthaml",
@@ -115,13 +156,63 @@
                 "HAML"
             ],
             "time": "2015-07-28 07:02:21"
+        },
+        {
+            "name": "symfony/yaml",
+            "version": "v2.7.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/yaml.git",
+                "reference": "31cb2ad0155c95b88ee55fe12bc7ff92232c1770"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/31cb2ad0155c95b88ee55fe12bc7ff92232c1770",
+                "reference": "31cb2ad0155c95b88ee55fe12bc7ff92232c1770",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.9"
+            },
+            "require-dev": {
+                "symfony/phpunit-bridge": "~2.7"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.7-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Yaml\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Yaml Component",
+            "homepage": "https://symfony.com",
+            "time": "2015-09-14 14:14:09"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "artovenry/haml": 20
+        "artovenry/haml": 20,
+        "artovenry/wphelpers": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
