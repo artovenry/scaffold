@@ -1,5 +1,5 @@
 <?
-define('ART_ENV', 'Development');
+define('ART_ENV', 'development');
 
 require TEMPLATEPATH . "/vendor/autoload.php";
 
