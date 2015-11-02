@@ -1,6 +1,6 @@
 module.exports= (grunt)->
-  PROJECT_NAME= "Artovenry ウェブサイト"
-  HOSTNAME= "showtarow.local"
+  PROJECT_NAME= "project name"
+  HOSTNAME= "project_hostname.local"
   PORT= 3000
   PORT_LIVERELOAD= 30000
   THEME_PATH= "theme"

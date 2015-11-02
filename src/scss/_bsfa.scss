@@ -1,13 +1,20 @@
 @charset "utf-8";
 
 
+//PRODUCTION
+//$bootstrap-sass-asset-helper: false;
+//$fa-sass-asset-helper: false;
+//$icon-font-path:"../vendor/bootstrap/fonts/";
+//$fa-font-path: "../vendor/fontawesome/";
+
+
+//DEVELOPMENT
+$bootstrap-sass-asset-helper: true;
+$fa-sass-asset-helper: true;
+$icon-font-path:"bootstrap/fonts/";
+$fa-font-path: "fontawesome/";
+
 @import "bootstrap-compass";
-$bootstrap-sass-asset-helper: false;
-@import "font-awesome-compass";
-$fa-sass-asset-helper: false;
-
-
-$icon-font-path: "../vendor/bootstrap/fonts/";
 @import "bootstrap/variables";
 @import "bootstrap/mixins";
 @import "bootstrap/normalize";
@@ -18,6 +25,5 @@ $icon-font-path: "../vendor/bootstrap/fonts/";
 @import "bootstrap/utilities";
 @import "bootstrap/responsive-utilities";
 @import "bootstrap/glyphicons";
-
-$fa-font-path: "../vendor/fontawesome/fonts/";
+@import "font-awesome-compass";
 @import "font-awesome";
