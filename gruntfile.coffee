@@ -82,7 +82,7 @@ module.exports= (grunt)->
           {src:["tmp/jst/js/**/*.js"], dest:"tmp/jst/jst.js"}
           {src:["tmp/jst/jst.js","tmp/js/**/*.js"], dest:"#{JS_PATH}/site.js"}
         ]
-    compass: dist: options: bundleExec: on, config: "compass.rb"
+    compass: dist: options: bundleExec: yes, config: "compass.rb"
 
   require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks)
   grunt.task.run 'notify_hooks'
